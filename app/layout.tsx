@@ -2,6 +2,7 @@ import React from "react"
 import type { Metadata, Viewport } from 'next'
 import { Playfair_Display, Inter } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
+import Script from 'next/script'
 import './globals.css'
 
 const playfair = Playfair_Display({ subsets: ["latin"], variable: '--font-serif' });
@@ -37,6 +38,12 @@ export default function RootLayout({
       <body className={`${playfair.variable} ${inter.variable} font-sans antialiased`}>
         {children}
         <Analytics />
+        {/* Asistente de agendamiento (bot AboVirtual): botón flotante "Agenda tu consulta" */}
+        <Script
+          src="https://abovirtual-ecosistema-1.vercel.app/widget.js"
+          strategy="afterInteractive"
+          data-label="Agenda tu consulta"
+        />
       </body>
     </html>
   )
