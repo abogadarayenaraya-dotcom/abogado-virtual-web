@@ -4,6 +4,7 @@ import { useEffect, useState, useCallback } from "react"
 import Image from "next/image"
 import { ChevronLeft, ChevronRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import { WHATSAPP_PRIMARY } from "@/lib/contact"
 
 const images = [
   {
@@ -22,7 +23,7 @@ const images = [
     src: "/images/contact.jpg",
     alt: "Contacto AboVirtual",
     title: "Contáctanos",
-    subtitle: "+56 9 4116 5158",
+    subtitle: WHATSAPP_PRIMARY.display,
   },
   {
     src: "/images/logo-alt.jpg",

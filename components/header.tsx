@@ -1,5 +1,6 @@
 "use client"
 
+import { WHATSAPP_PRIMARY_URL } from "@/lib/contact"
 import { useState } from "react"
 import Link from "next/link"
 import Image from "next/image"
@@ -57,7 +58,7 @@ export function Header() {
           <div className="flex items-center gap-2">
             <Button asChild size="sm" className="hidden sm:flex">
               <a
-                href="https://wa.me/56941165158"
+                href={WHATSAPP_PRIMARY_URL}
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -88,7 +89,7 @@ export function Header() {
                   ))}
                   <Button asChild className="mt-4">
                     <a
-                      href="https://wa.me/56941165158"
+                      href={WHATSAPP_PRIMARY_URL}
                       target="_blank"
                       rel="noopener noreferrer"
                     >

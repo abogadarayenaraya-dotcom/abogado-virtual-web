@@ -6,6 +6,7 @@ import { ServicesSearch } from "@/components/home/services-search"
 import { AboutSection } from "@/components/home/about-section"
 import { ImageCarousel } from "@/components/home/image-carousel"
 import { ServicesPreview } from "@/components/home/services-preview"
+import { PricingSection } from "@/components/pricing-section"
 import { AIAgentsPreview } from "@/components/home/ai-agents-preview"
 import { MarketingPreview } from "@/components/home/marketing-preview"
 import { LeyKarinPreview } from "@/components/home/ley-karin-preview"
@@ -22,6 +23,7 @@ export default function HomePage() {
         <AboutSection />
         <ImageCarousel />
         <ServicesPreview />
+        <PricingSection />
         <AIAgentsPreview />
         <MarketingPreview />
         <LeyKarinPreview />

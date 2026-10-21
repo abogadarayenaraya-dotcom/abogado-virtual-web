@@ -1,6 +1,7 @@
 import Link from "next/link"
 import Image from "next/image"
 import { Mail, Phone, MapPin } from "lucide-react"
+import { WHATSAPP_LINES, waLink } from "@/lib/contact"
 
 const navItems = [
   { href: "/servicios", label: "Servicios Legales" },
@@ -82,17 +83,22 @@ export function Footer() {
           <div>
             <h3 className="font-semibold text-foreground mb-4">Contacto</h3>
             <ul className="space-y-3">
-              <li>
-                <a
-                  href="https://wa.me/56941165158"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors"
-                >
-                  <Phone className="w-4 h-4" />
-                  +56 9 4116 5158
-                </a>
-              </li>
+              {WHATSAPP_LINES.map((line) => (
+                <li key={line.id}>
+                  <a
+                    href={waLink(line.number)}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors"
+                  >
+                    <Phone className="w-4 h-4 shrink-0" />
+                    <span>
+                      {line.display}
+                      <span className="ml-1.5 text-xs text-muted-foreground/70">({line.label})</span>
+                    </span>
+                  </a>
+                </li>
+              ))}
               <li>
                 <a
                   href="mailto:abogadarayenaraya@gmail.com"

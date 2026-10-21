@@ -1,3 +1,4 @@
+import { WHATSAPP_LINES, WHATSAPP_PRIMARY_URL, waLink } from "@/lib/contact"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Calendar, MessageCircle, Phone } from "lucide-react"
@@ -35,7 +36,7 @@ export function CTASection() {
               asChild
             >
               <a
-                href="https://wa.me/56941165158"
+                href={WHATSAPP_PRIMARY_URL}
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -48,15 +49,18 @@ export function CTASection() {
           {/* Contact Info */}
           <div className="mt-12 pt-8 border-t border-primary-foreground/20">
             <div className="flex flex-wrap justify-center gap-8">
-              <a
-                href="https://wa.me/56941165158"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-2 text-primary-foreground/80 hover:text-primary-foreground transition-colors"
-              >
-                <Phone className="w-5 h-5" />
-                +56 9 4116 5158
-              </a>
+              {WHATSAPP_LINES.map((line) => (
+                <a
+                  key={line.id}
+                  href={waLink(line.number)}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 text-primary-foreground/80 hover:text-primary-foreground transition-colors"
+                >
+                  <Phone className="w-5 h-5" />
+                  {line.display}
+                </a>
+              ))}
               <a
                 href="mailto:abogadarayenaraya@gmail.com"
                 className="flex items-center gap-2 text-primary-foreground/80 hover:text-primary-foreground transition-colors"

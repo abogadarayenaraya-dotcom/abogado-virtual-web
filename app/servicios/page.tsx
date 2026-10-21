@@ -1,6 +1,8 @@
+import { WHATSAPP_PRIMARY_URL } from "@/lib/contact"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { WhatsAppButton } from "@/components/whatsapp-button"
+import { PricingSection } from "@/components/pricing-section"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
@@ -149,7 +151,7 @@ export default function ServiciosPage() {
               </p>
               <div className="flex flex-wrap justify-center gap-4 mt-8">
                 <Button asChild size="lg">
-                  <a href="https://wa.me/56941165158" target="_blank" rel="noopener noreferrer">
+                  <a href={WHATSAPP_PRIMARY_URL} target="_blank" rel="noopener noreferrer">
                     <MessageCircle className="w-5 h-5 mr-2" />
                     Consultar por WhatsApp
                   </a>
@@ -164,6 +166,9 @@ export default function ServiciosPage() {
             </div>
           </div>
         </section>
+
+        {/* Pricing Cards */}
+        <PricingSection />
 
         {/* Services Grid */}
         <section className="py-16 bg-background">
@@ -207,7 +212,7 @@ export default function ServiciosPage() {
               Agenda tu consulta virtual desde $20.000. Atención inmediata por WhatsApp.
             </p>
             <Button size="lg" variant="secondary" className="mt-8" asChild>
-              <a href="https://wa.me/56941165158" target="_blank" rel="noopener noreferrer">
+              <a href={WHATSAPP_PRIMARY_URL} target="_blank" rel="noopener noreferrer">
                 <MessageCircle className="w-5 h-5 mr-2" />
                 Agendar Ahora
               </a>
