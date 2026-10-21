@@ -1,5 +1,6 @@
 "use client"
 
+import { WHATSAPP_URL, whatsappNumbers } from "@/lib/contact"
 import { useEffect, useState } from "react"
 import Image from "next/image"
 import Link from "next/link"
@@ -161,7 +162,7 @@ export function HeroSection() {
               </Button>
               <Button size="lg" variant="outline" asChild className="group bg-transparent">
                 <a
-                  href="https://wa.me/56941165158"
+                  href={WHATSAPP_URL}
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -224,7 +225,7 @@ export function HeroSection() {
                 Consultas Online
               </div>
               <div className="absolute -bottom-4 -left-4 bg-secondary text-secondary-foreground px-4 py-2 rounded-full text-sm font-medium shadow-lg animate-bounce" style={{ animationDelay: "0.5s" }}>
-                +56 9 4116 5158
+                {whatsappNumbers.primary.display} / {whatsappNumbers.secondary.display}
               </div>
             </div>
           </div>

@@ -1,6 +1,7 @@
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Calendar, MessageCircle, Phone } from "lucide-react"
+import { whatsappNumbers } from "@/lib/contact"
 
 export function CTASection() {
   return (
@@ -35,12 +36,27 @@ export function CTASection() {
               asChild
             >
               <a
-                href="https://wa.me/56941165158"
+                href={whatsappNumbers.primary.href}
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 <MessageCircle className="w-5 h-5 mr-2" />
-                WhatsApp
+                WhatsApp 1
+              </a>
+            </Button>
+            <Button
+              size="lg"
+              variant="outline"
+              className="border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10 bg-transparent"
+              asChild
+            >
+              <a
+                href={whatsappNumbers.secondary.href}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <MessageCircle className="w-5 h-5 mr-2" />
+                WhatsApp 2
               </a>
             </Button>
           </div>
@@ -48,15 +64,18 @@ export function CTASection() {
           {/* Contact Info */}
           <div className="mt-12 pt-8 border-t border-primary-foreground/20">
             <div className="flex flex-wrap justify-center gap-8">
-              <a
-                href="https://wa.me/56941165158"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-2 text-primary-foreground/80 hover:text-primary-foreground transition-colors"
-              >
-                <Phone className="w-5 h-5" />
-                +56 9 4116 5158
-              </a>
+              {[whatsappNumbers.primary, whatsappNumbers.secondary].map((contact) => (
+                <a
+                  key={contact.number}
+                  href={contact.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 text-primary-foreground/80 hover:text-primary-foreground transition-colors"
+                >
+                  <Phone className="w-5 h-5" />
+                  {contact.display}
+                </a>
+              ))}
               <a
                 href="mailto:abogadarayenaraya@gmail.com"
                 className="flex items-center gap-2 text-primary-foreground/80 hover:text-primary-foreground transition-colors"
