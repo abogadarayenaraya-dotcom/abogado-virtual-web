@@ -41,7 +41,7 @@ export function CTASection() {
                 rel="noopener noreferrer"
               >
                 <MessageCircle className="w-5 h-5 mr-2" />
-                WhatsApp 1
+                Línea Principal
               </a>
             </Button>
             <Button
@@ -56,7 +56,7 @@ export function CTASection() {
                 rel="noopener noreferrer"
               >
                 <MessageCircle className="w-5 h-5 mr-2" />
-                WhatsApp 2
+                Línea Secundaria
               </a>
             </Button>
           </div>

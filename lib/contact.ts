@@ -20,6 +20,8 @@ export function whatsappMessageUrl(number: string, message: string) {
 }
 
 export const BOOKING_URL = "https://calendar.app.google/HrtUwuC47YpjmokJA"
+// Google Calendar > Programa de citas > Compartir > "Insertar en sitio web" link; leave empty to show the booking button
+export const BOOKING_EMBED_URL = ""
 
 export const office = {
   address: "Almirante Zegers #764, Providencia",

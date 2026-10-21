@@ -6,6 +6,7 @@ import { useState } from "react"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { WhatsAppButton } from "@/components/whatsapp-button"
+import { BookingSection } from "@/components/booking-section"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
@@ -111,6 +112,8 @@ export default function ContactoPage() {
           </div>
         </section>
 
+        <BookingSection />
+
         {/* Contact Form & Info */}
         <section className="py-16 bg-background">
           <div className="container mx-auto px-4">
@@ -135,7 +138,7 @@ export default function ContactoPage() {
                           <MessageCircle className="w-5 h-5" />
                         </div>
                         <div>
-                          <p className="font-medium text-foreground">WhatsApp {index + 1}</p>
+                          <p className="font-medium text-foreground">{index === 0 ? "Línea Principal" : "Línea Secundaria"}</p>
                           <p className="text-sm text-muted-foreground">{contact.display}</p>
                         </div>
                       </a>
