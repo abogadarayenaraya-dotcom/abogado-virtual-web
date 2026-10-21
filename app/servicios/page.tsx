@@ -1,4 +1,4 @@
-import { WHATSAPP_URL } from "@/lib/contact"
+import { WHATSAPP_URL, BOOKING_URL } from "@/lib/contact"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { WhatsAppButton } from "@/components/whatsapp-button"
@@ -157,10 +157,10 @@ export default function ServiciosPage() {
                   </a>
                 </Button>
                 <Button asChild size="lg" variant="outline">
-                  <Link href="/contacto">
+                  <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer">
                     <Calendar className="w-5 h-5 mr-2" />
                     Agendar Consulta
-                  </Link>
+                  </a>
                 </Button>
               </div>
             </div>

@@ -19,6 +19,8 @@ export function whatsappMessageUrl(number: string, message: string) {
   return `https://wa.me/${number}?text=${encodeURIComponent(message)}`
 }
 
+export const BOOKING_URL = "https://calendar.app.google/HrtUwuC47YpjmokJA"
+
 export const office = {
   address: "Almirante Zegers #764, Providencia",
   reference: "A pasos de Metro Salvador",

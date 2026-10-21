@@ -1,7 +1,7 @@
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Calendar, MessageCircle, Phone } from "lucide-react"
-import { whatsappNumbers } from "@/lib/contact"
+import { whatsappNumbers, BOOKING_URL } from "@/lib/contact"
 
 export function CTASection() {
   return (
@@ -24,10 +24,10 @@ export function CTASection() {
 
           <div className="flex flex-wrap justify-center gap-4 mt-8">
             <Button size="lg" variant="secondary" asChild>
-              <Link href="/contacto">
+              <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer">
                 <Calendar className="w-5 h-5 mr-2" />
                 Agendar Consulta
-              </Link>
+              </a>
             </Button>
             <Button
               size="lg"

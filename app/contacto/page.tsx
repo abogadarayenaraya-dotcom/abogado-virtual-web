@@ -24,7 +24,7 @@ import {
   Send,
   Video,
 } from "lucide-react"
-import { whatsappNumbers, whatsappMessageUrl, office } from "@/lib/contact"
+import { whatsappNumbers, whatsappMessageUrl, office, BOOKING_URL } from "@/lib/contact"
 
 const consultationTypes = [
   "Familia (divorcios, visitas, pensión de alimentos)",
@@ -99,9 +99,14 @@ export default function ContactoPage() {
                 Agenda tu Consulta
               </h1>
               <p className="text-muted-foreground mt-4 text-lg">
-                Selecciona fecha, hora, modalidad y tipo de consulta.
-                Te contactaremos para confirmar.
+                Reserva tu hora directamente en nuestro calendario, o envíanos tu solicitud por WhatsApp.
               </p>
+              <Button asChild size="lg" className="mt-8">
+                <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer">
+                  <CalendarDays className="w-5 h-5 mr-2" />
+                  Reservar hora en Google Calendar
+                </a>
+              </Button>
             </div>
           </div>
         </section>
@@ -219,7 +224,11 @@ export default function ContactoPage() {
                       Agendar Consulta
                     </CardTitle>
                     <CardDescription>
-                      Completa el formulario y te contactaremos para confirmar
+                      ¿Prefieres WhatsApp? Completa el formulario y te contactaremos para confirmar. También puedes{" "}
+                      <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className="text-primary underline">
+                        reservar directo en el calendario
+                      </a>
+                      .
                     </CardDescription>
                   </CardHeader>
                   <CardContent>

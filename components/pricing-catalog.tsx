@@ -1,8 +1,8 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
-import { Users, Building2, Briefcase, Home, CheckCircle, MessageCircle } from "lucide-react"
-import { WHATSAPP_URL } from "@/lib/contact"
+import { Users, Building2, Briefcase, Home, CheckCircle, MessageCircle, CalendarDays } from "lucide-react"
+import { WHATSAPP_URL, BOOKING_URL } from "@/lib/contact"
 
 type CatalogItem = {
   name: string
@@ -91,7 +91,13 @@ export function PricingCatalog() {
           ))}
         </div>
 
-        <div className="text-center mt-10">
+        <div className="flex flex-wrap justify-center gap-4 mt-10">
+          <Button asChild size="lg" variant="outline">
+            <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer">
+              <CalendarDays className="w-5 h-5 mr-2" />
+              Reservar hora
+            </a>
+          </Button>
           <Button asChild size="lg">
             <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
               <MessageCircle className="w-5 h-5 mr-2" />
