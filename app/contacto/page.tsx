@@ -15,6 +15,7 @@ import { Label } from "@/components/ui/label"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Calendar } from "@/components/ui/calendar"
 import { Badge } from "@/components/ui/badge"
+import { Checkbox } from "@/components/ui/checkbox"
 import {
   Phone,
   Mail,
@@ -72,6 +73,8 @@ export default function ContactoPage() {
     modalidad: "",
     hora: "",
     mensaje: "",
+    acepta: false,
+    website: "",
   })
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
@@ -83,6 +86,28 @@ export default function ContactoPage() {
     const message = `Hola, me gustaría agendar una consulta:\n\nNombre: ${formData.nombre}\nEmail: ${formData.email}\nTeléfono: ${formData.telefono}\nTipo de consulta: ${formData.tipo}\nModalidad: ${formData.modalidad}\nFecha preferida: ${date ? date.toLocaleDateString("es-CL") : "Por definir"}\nHora: ${formData.hora}\n\nMensaje: ${formData.mensaje}`
     
     window.open(whatsappMessageUrl(number, message), "_blank")
+
+    // Save the lead in the Google Sheet; keepalive lets it finish after the tab switch
+    fetch("/api/lead", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      keepalive: true,
+      body: JSON.stringify({
+        nombre: formData.nombre,
+        correo: formData.email,
+        telefono: formData.telefono,
+        servicio: formData.tipo,
+        tipo_consulta: formData.tipo,
+        modalidad: formData.modalidad,
+        fecha_cita: date ? date.toLocaleDateString("es-CL") : "",
+        hora_cita: formData.hora,
+        descripcion: formData.mensaje,
+        pagina: window.location.pathname,
+        fuente: "reserva",
+        acepta_datos: formData.acepta,
+        website: formData.website,
+      }),
+    }).catch(() => {})
   }
 
   return (
@@ -363,7 +388,31 @@ export default function ContactoPage() {
                         />
                       </div>
 
-                      <Button type="submit" size="lg" className="w-full" data-number={whatsappNumbers.primary.number}>
+                      {/* Honeypot: hidden from people, bots fill it */}
+                      <input
+                        type="text"
+                        name="website"
+                        tabIndex={-1}
+                        autoComplete="off"
+                        aria-hidden="true"
+                        className="hidden"
+                        value={formData.website}
+                        onChange={(e) => setFormData({ ...formData, website: e.target.value })}
+                      />
+
+                      <div className="flex items-start gap-3">
+                        <Checkbox
+                          id="acepta"
+                          checked={formData.acepta}
+                          onCheckedChange={(checked) => setFormData({ ...formData, acepta: checked === true })}
+                          required
+                        />
+                        <Label htmlFor="acepta" className="text-sm font-normal leading-snug text-muted-foreground">
+                          Acepto que AboVirtual use mis datos para contactarme por esta consulta. *
+                        </Label>
+                      </div>
+
+                      <Button type="submit" size="lg" className="w-full" disabled={!formData.acepta} data-number={whatsappNumbers.primary.number}>
                         <Send className="w-5 h-5 mr-2" />
                         Enviar Solicitud
                       </Button>
@@ -371,6 +420,7 @@ export default function ContactoPage() {
                         type="submit"
                         variant="link"
                         className="w-full"
+                        disabled={!formData.acepta}
                         data-number={whatsappNumbers.secondary.number}
                       >
                         o enviar al WhatsApp {whatsappNumbers.secondary.display}
