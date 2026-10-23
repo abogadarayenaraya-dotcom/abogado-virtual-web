@@ -13,6 +13,11 @@ import { TestimonialsSection } from "@/components/home/testimonials-section"
 import { CTASection } from "@/components/home/cta-section"
 import { PricingCatalog } from "@/components/pricing-catalog"
 import { BookingSection } from "@/components/booking-section"
+import type { Metadata } from "next"
+
+export const metadata: Metadata = {
+  alternates: { canonical: "/" },
+}
 
 export default function HomePage() {
   return (

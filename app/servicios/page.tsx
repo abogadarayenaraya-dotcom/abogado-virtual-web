@@ -3,6 +3,7 @@ import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { WhatsAppButton } from "@/components/whatsapp-button"
 import { PricingCatalog } from "@/components/pricing-catalog"
+import { landingPages } from "@/lib/landing-pages"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
@@ -24,8 +25,9 @@ import {
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "Servicios Legales | AboVirtual",
-  description: "Consultas legales desde $20.000. Herencias, trámites legales, escrituras, testamentos, familia, inmigración, acoso laboral, derecho laboral y Ley Karin.",
+  title: "Servicios Legales y Precios: Divorcios, Pensión de Alimentos y Laboral",
+  description: "Precios publicados: divorcio de mutuo acuerdo $99.990, divorcio unilateral o visitas $199.990, pensión de alimentos $359.990, Ley Karin y sociedades. Consultas desde $20.000.",
+  alternates: { canonical: "/servicios" },
 }
 
 const services = [
@@ -168,6 +170,28 @@ export default function ServiciosPage() {
         </section>
 
         <PricingCatalog />
+
+        {/* Guías por servicio */}
+        <section className="py-12">
+          <div className="container mx-auto px-4">
+            <h2 className="text-2xl md:text-3xl font-serif font-bold text-foreground text-center">
+              Requisitos, plazos y precios por servicio
+            </h2>
+            <ul className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-8 max-w-5xl mx-auto">
+              {landingPages.map((page) => (
+                <li key={page.slug}>
+                  <Link
+                    href={`/servicios/${page.slug}`}
+                    className="block h-full rounded-2xl border border-border bg-card p-4 hover:border-primary/50 transition-colors"
+                  >
+                    <span className="text-xs font-semibold text-primary">{page.category}</span>
+                    <span className="block font-semibold text-foreground mt-1">{page.name}</span>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
 
         {/* Services Grid */}
         <section className="py-16 bg-card">

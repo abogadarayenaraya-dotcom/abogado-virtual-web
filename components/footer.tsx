@@ -14,15 +14,14 @@ const navItems = [
 ]
 
 const legalServices = [
-  "Herencias",
-  "Trámites Legales",
-  "Escrituras",
-  "Testamentos",
-  "Familia",
-  "Inmigración",
-  "Acoso Laboral",
-  "Derecho Laboral",
-  "Ley Karin",
+  { href: "/servicios/divorcio-mutuo-acuerdo", label: "Divorcio de mutuo acuerdo" },
+  { href: "/servicios/divorcio-unilateral", label: "Divorcio unilateral" },
+  { href: "/servicios/pension-de-alimentos", label: "Pensión de alimentos" },
+  { href: "/servicios/relacion-directa-y-regular", label: "Régimen de visitas" },
+  { href: "/servicios/derecho-de-familia", label: "Abogado de familia" },
+  { href: "/servicios/abogado-laboral", label: "Abogado laboral" },
+  { href: "/servicios/protocolo-ley-karin", label: "Protocolo Ley Karin" },
+  { href: "/servicios/constitucion-de-sociedades", label: "Constitución de sociedades" },
 ]
 
 export function Footer() {
@@ -72,8 +71,13 @@ export function Footer() {
             <h3 className="font-semibold text-foreground mb-4">Servicios</h3>
             <ul className="space-y-2">
               {legalServices.map((service) => (
-                <li key={service}>
-                  <span className="text-sm text-muted-foreground">{service}</span>
+                <li key={service.href}>
+                  <Link
+                    href={service.href}
+                    className="text-sm text-muted-foreground hover:text-primary transition-colors"
+                  >
+                    {service.label}
+                  </Link>
                 </li>
               ))}
             </ul>

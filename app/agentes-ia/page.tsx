@@ -20,8 +20,9 @@ import {
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "Agentes Jurídicos IA | AboVirtual",
+  title: "Agentes Jurídicos IA",
   description: "Inteligencia artificial aplicada a casos legales. Agentes IA especializados en Ley Karin, contratos, denuncias y consultas rápidas. Desde $250.000.",
+  alternates: { canonical: "/agentes-ia" },
 }
 
 const agents = [

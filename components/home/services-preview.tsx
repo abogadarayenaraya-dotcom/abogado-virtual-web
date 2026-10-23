@@ -17,16 +17,16 @@ import {
   ArrowRight,
 } from "lucide-react"
 
-const services = [
+const services: { icon: typeof Scale; title: string; description: string; color: string; href?: string }[] = [
   { icon: Scale, title: "Herencias", description: "Posesión efectiva y gestión hereditaria", color: "bg-primary/10 text-primary" },
   { icon: FileText, title: "Trámites Legales", description: "Gestión de documentos y procesos", color: "bg-secondary/10 text-secondary" },
   { icon: Home, title: "Escrituras", description: "Compraventa e inscripciones", color: "bg-accent/10 text-accent" },
   { icon: ScrollText, title: "Testamentos", description: "Redacción y validación", color: "bg-primary/10 text-primary" },
-  { icon: Users, title: "Familia", description: "Divorcios, tuiciones y pensiones", color: "bg-secondary/10 text-secondary" },
+  { icon: Users, title: "Familia", description: "Divorcios, tuiciones y pensiones", color: "bg-secondary/10 text-secondary", href: "/servicios/derecho-de-familia" },
   { icon: Plane, title: "Inmigración", description: "Visas y residencias", color: "bg-accent/10 text-accent" },
-  { icon: ShieldAlert, title: "Acoso Laboral", description: "Defensa y denuncia", color: "bg-destructive/10 text-destructive" },
-  { icon: Briefcase, title: "Derecho Laboral", description: "Despidos y finiquitos", color: "bg-primary/10 text-primary" },
-  { icon: Gavel, title: "Ley Karin", description: "Protocolo y cumplimiento", color: "bg-secondary/10 text-secondary" },
+  { icon: ShieldAlert, title: "Acoso Laboral", description: "Defensa y denuncia", color: "bg-destructive/10 text-destructive", href: "/servicios/abogado-laboral" },
+  { icon: Briefcase, title: "Derecho Laboral", description: "Despidos y finiquitos", color: "bg-primary/10 text-primary", href: "/servicios/abogado-laboral" },
+  { icon: Gavel, title: "Ley Karin", description: "Protocolo y cumplimiento", color: "bg-secondary/10 text-secondary", href: "/servicios/protocolo-ley-karin" },
 ]
 
 export function ServicesPreview() {
@@ -53,7 +53,7 @@ export function ServicesPreview() {
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {services.map((service, index) => (
-            <Link key={service.title} href={`/servicios#${service.title.toLowerCase().replace(' ', '-')}`}>
+            <Link key={service.title} href={service.href ?? `/servicios#${service.title.toLowerCase().replace(' ', '-')}`}>
               <Card
                 className="group hover:border-primary/50 hover:-translate-y-2 transition-all duration-300 bg-background cursor-pointer h-full"
                 style={{ animationDelay: `${index * 100}ms` }}
