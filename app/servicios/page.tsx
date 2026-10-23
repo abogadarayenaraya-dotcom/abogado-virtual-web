@@ -25,7 +25,7 @@ import {
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "Servicios Legales y Precios: Divorcios, Pensión de Alimentos y Laboral",
+  title: "Servicios Legales y Precios: Divorcios, Alimentos y Laboral",
   description: "Precios publicados: divorcio de mutuo acuerdo $99.990, divorcio unilateral o visitas $199.990, pensión de alimentos $359.990, Ley Karin y sociedades. Consultas desde $20.000.",
   alternates: { canonical: "/servicios" },
 }

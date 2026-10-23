@@ -14,7 +14,7 @@ export const legalServiceJsonLd = {
   logo: `${SITE_URL}/images/logo.jpg`,
   image: `${SITE_URL}/images/abogada.jpg`,
   description:
-    "Abogados de familia, laborales y de empresas en Chile. Divorcio de mutuo acuerdo y unilateral, pensión de alimentos, relación directa y regular (visitas), despidos, Ley Karin y constitución de sociedades. Atención online en todo Chile y presencial en Providencia.",
+    "Abogados de familia, laborales y de empresas en Chile. Divorcio de mutuo acuerdo y unilateral, pensión de alimentos, relación directa y regular (visitas), derecho laboral para trabajadores, civil, penal, inmobiliario, Ley Karin, sociedades y asesoría a empresas e inversionistas. Estudio legaltech. Atención online en todo Chile y presencial en Providencia.",
   telephone: `+${whatsappNumbers.primary.number}`,
   email: "abogadarayenaraya@gmail.com",
   priceRange: "$$",
@@ -54,6 +54,12 @@ export const legalServiceJsonLd = {
     "Derecho laboral",
     "Ley Karin",
     "Constitución de sociedades",
+    "Derecho civil",
+    "Derecho penal",
+    "Derecho inmobiliario",
+    "Asesoría legal a empresas",
+    "Asesoría a inversionistas",
+    "Legaltech",
   ],
 }
 

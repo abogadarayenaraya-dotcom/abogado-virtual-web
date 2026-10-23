@@ -61,8 +61,8 @@ const areas: { icon: typeof Users; emoji: string; area: string; offers: Offer[] 
     emoji: "🏠",
     area: "Área Civil",
     offers: [
-      { name: "Posesión Efectiva", features: ["Posesión Efectiva exprés"] },
-      { name: "Arriendos y Desalojos", features: ["Arriendos blindados", "Desalojos"] },
+      { name: "Posesión Efectiva", features: ["Posesión Efectiva exprés"], href: "/servicios/derecho-civil" },
+      { name: "Arriendos y Desalojos", features: ["Arriendos blindados", "Desalojos"], href: "/servicios/derecho-civil" },
     ],
   },
 ]

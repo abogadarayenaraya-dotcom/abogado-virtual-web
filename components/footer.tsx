@@ -22,6 +22,13 @@ const legalServices = [
   { href: "/servicios/abogado-laboral", label: "Abogado laboral" },
   { href: "/servicios/protocolo-ley-karin", label: "Protocolo Ley Karin" },
   { href: "/servicios/constitucion-de-sociedades", label: "Constitución de sociedades" },
+  { href: "/servicios/derecho-civil", label: "Abogado civil" },
+  { href: "/servicios/derecho-penal", label: "Abogado penal" },
+  { href: "/servicios/derecho-inmobiliario", label: "Abogado inmobiliario" },
+  { href: "/servicios/asesoria-legal-empresas", label: "Asesoría a empresas" },
+  { href: "/servicios/asesoria-inversionistas", label: "Asesoría a inversionistas" },
+  { href: "/servicios/abogado-online-legaltech", label: "Abogado online (legaltech)" },
+  { href: "/servicios/proveedores-de-casos", label: "Casos para abogados" },
 ]
 
 export function Footer() {

@@ -31,6 +31,11 @@ export const metadata: Metadata = {
     'abogado laboral',
     'Ley Karin',
     'constitución de sociedades',
+    'abogado civil',
+    'abogado penal',
+    'abogado inmobiliario',
+    'asesoría legal empresas',
+    'legaltech',
   ],
   authors: [{ name: 'AboVirtual' }],
   openGraph: {

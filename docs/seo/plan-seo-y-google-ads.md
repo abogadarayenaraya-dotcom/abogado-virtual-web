@@ -16,7 +16,7 @@ Metodología: skills `claude-seo` (auditoría técnica, schema, sitemap, local, 
 | Sin URL canónica ni `metadataBase` | Riesgo de duplicados (con y sin www) y Open Graph con URLs relativas | Resuelto |
 | Título de inicio genérico ("Abogados Siempre Conectados") | No apunta a ninguna búsqueda real | Resuelto: "Abogado de Familia Online en Chile \| Divorcio y Pensión de Alimentos" |
 | H1 del inicio cambia con el carrusel | Google no tiene un tema claro para la portada | Resuelto: H1 fijo con la keyword principal |
-| No había una página por servicio | Imposible rankear "divorcio mutuo acuerdo", "pensión de alimentos", etc. con una sola página | Resuelto: 8 páginas nuevas |
+| No había una página por servicio | Imposible rankear "divorcio mutuo acuerdo", "pensión de alimentos", etc. con una sola página | Resuelto: 15 páginas nuevas |
 | Footer con servicios sin enlaces | Se perdía enlazado interno | Resuelto |
 | `lang="es"` genérico | Señal de país débil | Resuelto: `es-CL` |
 
@@ -34,6 +34,15 @@ Cada página apunta a un grupo de búsquedas. Prioridad A = alta intención de c
 | B | `/servicios/abogado-laboral` | abogado laboral | despido injustificado, revisión de finiquito, demanda laboral, tutela laboral, indemnización por años de servicio |
 | B | `/servicios/protocolo-ley-karin` | protocolo ley karin | ley karin empresas, ley karin pymes, implementación ley karin, reglamento interno ley karin |
 | C | `/servicios/constitucion-de-sociedades` | constitución de sociedades | crear empresa chile, constituir spa, abogado para crear empresa |
+| B | `/servicios/derecho-civil` | abogado civil | posesión efectiva, demanda de desalojo, ley devuélveme mi casa, arriendo con abogado, cobro de deudas |
+| B | `/servicios/derecho-penal` | abogado penal | abogado penalista, defensa penal, querella, abogado formalización, abogado penal urgente |
+| B | `/servicios/derecho-inmobiliario` | abogado inmobiliario | estudio de títulos, abogado compraventa propiedad, promesa de compraventa, inscripción conservador |
+| B | `/servicios/abogado-online-legaltech` | abogado online | abogado online chile, abogado virtual, legaltech chile, consulta legal online, abogado por whatsapp |
+| C | `/servicios/asesoria-legal-empresas` | asesoría legal empresas | abogado para empresas, abogado pymes, abogado corporativo, compliance empresas |
+| C | `/servicios/asesoria-inversionistas` | abogado inversionistas | due diligence legal, pacto de accionistas, invertir en chile abogado |
+| C | `/servicios/proveedores-de-casos` | casos para abogados | clientes para abogados, derivación de casos, red de abogados, marketing para abogados |
+
+Nota sobre derivación de casos: el Código de Ética Profesional del Colegio de Abogados pone límites a la captación de clientes y a compartir honorarios por derivar casos. La página está redactada de forma neutral ("condiciones por escrito y conforme a las normas de ética"); conviene que la abogada revise el modelo de colaboración antes de promocionarla con anuncios.
 
 Búsquedas informativas para el blog (traen tráfico y enlazan a las páginas de servicio). Prioridad para los próximos artículos:
 
@@ -52,7 +61,7 @@ Regla: un artículo por semana, de 900 a 1.500 palabras, con la abogada autora i
 
 - `app/layout.tsx`: `metadataBase`, título por defecto + plantilla `%s | AboVirtual`, descripción con precios, Open Graph, Twitter, robots, verificación de Search Console por variable de entorno, JSON-LD `LegalService` y `WebSite`, `lang="es-CL"`.
 - `app/sitemap.ts` y `app/robots.ts`: generan `/sitemap.xml` y `/robots.txt` (bloquea `/api/`).
-- `app/servicios/[slug]/page.tsx` + `lib/landing-pages.ts`: 8 páginas con H1, contenido, pasos, preguntas frecuentes, servicios relacionados y botones de WhatsApp/agenda con mensaje prellenado.
+- `app/servicios/[slug]/page.tsx` + `lib/landing-pages.ts`: 15 páginas con H1, contenido, pasos, preguntas frecuentes, servicios relacionados y botones de WhatsApp/agenda con mensaje prellenado.
 - Canonical y títulos en todas las páginas existentes; `app/contacto/layout.tsx` agrega metadatos a Contacto (que es un componente de cliente).
 - Enlaces internos: catálogo de precios ("Ver detalles y requisitos"), página Servicios, tarjetas del inicio y footer.
 - CSP del PR #4 sin cambios: el JSON-LD es `application/ld+json` y no se ejecuta. No aparece el número antiguo.
@@ -72,8 +81,22 @@ Nota sobre FAQ: desde mayo de 2026 Google ya no muestra resultados enriquecidos 
    - https://www.abogadovirtualchile.cl/servicios/divorcio-unilateral
    - https://www.abogadovirtualchile.cl/servicios/derecho-de-familia
    - https://www.abogadovirtualchile.cl/servicios/relacion-directa-y-regular
+   - Luego las demás de `/servicios/...` (penal, civil, inmobiliario, laboral, empresas, legaltech); el resto lo descubre Google por el sitemap.
 6. Revisar en 7 a 14 días: Indexación de páginas (que no haya "Descubierta, no indexada") y Rendimiento > Consultas.
 7. Probar el schema en https://search.google.com/test/rich-results con la URL de divorcio de mutuo acuerdo.
+
+## 4b. Indexación en Bing y otros buscadores (IndexNow)
+
+Google no usa IndexNow, pero Bing, Yandex, Seznam y Naver sí. El PR deja publicada la clave en `public/80bb7186be8c515929ca4fac217c7481.txt`. Después del merge se envían todas las URLs del sitemap con el script de claude-seo:
+
+```
+python3 scripts/indexnow_submit.py --host www.abogadovirtualchile.cl \
+  --key 80bb7186be8c515929ca4fac217c7481 \
+  --key-location https://www.abogadovirtualchile.cl/80bb7186be8c515929ca4fac217c7481.txt \
+  --urls <todas las URLs del sitemap>
+```
+
+Repetirlo cada vez que se publique o actualice una página. Para Bing conviene además crear la cuenta en Bing Webmaster Tools e importar el sitio desde Search Console (1 clic).
 
 ## 5. SEO local (sube mucho las consultas de "abogado de familia Providencia / Santiago")
 
@@ -134,7 +157,7 @@ Cumplimiento: no prometer resultados ("divorcio garantizado", "ganamos tu juicio
 
 | Indicador | Dónde | Meta a 90 días |
 |---|---|---|
-| Páginas de servicio indexadas | Search Console > Páginas | 8 de 8 |
+| Páginas de servicio indexadas | Search Console > Páginas | 15 de 15 |
 | Impresiones de "divorcio mutuo acuerdo", "pensión de alimentos" | Search Console > Rendimiento | Aparecer en el top 30 y subiendo |
 | Clics en WhatsApp desde páginas de servicio | Vercel Analytics / GA4 | Medirlo desde que se active la etiqueta |
 | Reseñas en Perfil de Empresa | Google | 10 o más |

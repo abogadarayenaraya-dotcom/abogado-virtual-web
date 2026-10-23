@@ -9,7 +9,7 @@ export type LandingSection = {
 
 export type LandingPage = {
   slug: string
-  category: "Familia" | "Laboral" | "Empresas"
+  category: "Familia" | "Laboral" | "Empresas" | "Civil" | "Penal" | "Inmobiliario" | "Legaltech"
   name: string
   metaTitle: string
   metaDescription: string
@@ -449,7 +449,7 @@ export const landingPages: LandingPage[] = [
     slug: "abogado-laboral",
     category: "Laboral",
     name: "Abogado laboral",
-    metaTitle: "Abogado Laboral Online en Chile | Despido Injustificado y Finiquito Gratis",
+    metaTitle: "Abogado Laboral Online | Despido Injustificado y Finiquito Gratis",
     metaDescription:
       "Abogado laboral para trabajadores: despido injustificado, tutela laboral y revisión de finiquito GRATIS. Plazos para demandar e indemnizaciones. Atención online.",
     h1: "Abogado laboral para trabajadores",
@@ -648,6 +648,455 @@ export const landingPages: LandingPage[] = [
     ],
     related: ["protocolo-ley-karin", "abogado-laboral"],
     whatsappMessage: "Hola, quiero constituir una sociedad.",
+  },
+  {
+    slug: "derecho-civil",
+    category: "Civil",
+    name: "Abogado civil",
+    metaTitle: "Abogado Civil en Chile | Posesión Efectiva, Arriendos y Desalojos",
+    metaDescription:
+      "Abogado civil en Chile: posesión efectiva exprés, arriendos blindados, desalojos, cobranzas y contratos. Atención online en todo Chile y presencial en Providencia.",
+    h1: "Abogado civil en Chile",
+    lead:
+      "Resolvemos herencias, arriendos, desalojos, cobros y contratos entre personas. Te explicamos el camino más corto y te representamos ante el tribunal o la notaría que corresponda.",
+    keywords: [
+      "abogado civil",
+      "posesion efectiva",
+      "abogado desalojo",
+      "demanda de desalojo",
+      "arriendo con abogado",
+      "ley devuelveme mi casa",
+      "cobro de deudas abogado",
+    ],
+    highlights: [
+      "Posesión efectiva exprés",
+      "Arriendos blindados y desalojos",
+      "Cobranzas y contratos",
+      "Atención online en todo Chile",
+    ],
+    sections: [
+      {
+        heading: "Posesión efectiva",
+        paragraphs: [
+          "Es el trámite que reconoce a los herederos y les permite disponer de los bienes de la persona fallecida. Si no hubo testamento, se tramita ante el Registro Civil; si hubo testamento, ante el tribunal civil. Te ayudamos a reunir los antecedentes, hacer el inventario de bienes y terminar las inscripciones.",
+        ],
+      },
+      {
+        heading: "Arriendos y desalojos",
+        paragraphs: [
+          "Redactamos contratos de arriendo con las cláusulas que protegen al propietario (arriendo blindado) y, si el arrendatario deja de pagar, demandamos la restitución del inmueble y el cobro de las rentas. La Ley 21.461, conocida como \"Devuélveme mi casa\", agregó un procedimiento monitorio más rápido para estos casos.",
+        ],
+      },
+      {
+        heading: "Otros asuntos civiles",
+        bullets: [
+          "Cobro de deudas, pagarés y cheques.",
+          "Redacción y revisión de contratos.",
+          "Indemnización de perjuicios.",
+          "Testamentos y partición de herencias.",
+        ],
+      },
+    ],
+    steps: [
+      { title: "Consulta", text: "Nos cuentas el caso y revisamos tus documentos." },
+      { title: "Estrategia", text: "Te decimos si conviene un trámite administrativo, notarial o un juicio." },
+      { title: "Tramitación", text: "Presentamos la solicitud o la demanda y la seguimos." },
+      { title: "Cierre", text: "Te entregamos el resultado y las inscripciones al día." },
+    ],
+    faqs: [
+      {
+        q: "¿La posesión efectiva requiere abogado?",
+        a: "La posesión efectiva sin testamento se puede pedir directamente en el Registro Civil, pero un abogado evita errores en el inventario y en las inscripciones que después retrasan la venta o partición de los bienes.",
+      },
+      {
+        q: "¿Cuánto demora un desalojo?",
+        a: "Depende del procedimiento y del tribunal. Con la Ley 21.461 existe un procedimiento monitorio para cobrar rentas y recuperar el inmueble más rápido que el juicio ordinario.",
+      },
+      {
+        q: "¿Cuánto cuesta?",
+        a: "Depende del trámite. Escríbenos por WhatsApp y te damos el valor antes de empezar; las consultas parten desde $20.000.",
+      },
+    ],
+    related: ["derecho-inmobiliario", "derecho-de-familia", "abogado-laboral"],
+    whatsappMessage: "Hola, necesito un abogado civil.",
+  },
+  {
+    slug: "derecho-penal",
+    category: "Penal",
+    name: "Abogado penal",
+    metaTitle: "Abogado Penal en Chile | Defensa Penal y Querellas | AboVirtual",
+    metaDescription:
+      "Abogado penalista en Chile: defensa en formalizaciones y juicios, querellas para víctimas y medidas cautelares. Atención urgente por WhatsApp y videollamada.",
+    h1: "Abogado penal en Chile",
+    lead:
+      "Si te investigan o fuiste víctima de un delito, necesitas asesoría desde el primer momento. Te defendemos como imputado o te representamos como víctima con una querella.",
+    keywords: [
+      "abogado penal",
+      "abogado penalista",
+      "defensa penal",
+      "querella",
+      "abogado formalizacion",
+      "abogado penal urgente",
+    ],
+    highlights: [
+      "Defensa de imputados",
+      "Querellas para víctimas",
+      "Audiencias de control y formalización",
+      "Atención urgente fuera de horario por Meet",
+    ],
+    sections: [
+      {
+        heading: "Defensa penal",
+        paragraphs: [
+          "Desde la detención o la citación a declarar, tienes derecho a un abogado. Te acompañamos en la audiencia de control de detención y de formalización, discutimos las medidas cautelares y buscamos la mejor salida para tu caso: absolución, salidas alternativas como la suspensión condicional o el acuerdo reparatorio, o un procedimiento abreviado cuando conviene.",
+          "La Defensoría Penal Pública entrega defensa gratuita; también puedes elegir un defensor privado que conozca tu caso en detalle y te atienda directamente.",
+        ],
+      },
+      {
+        heading: "Querellas para víctimas",
+        paragraphs: [
+          "La víctima puede presentar una querella para ser parte activa del proceso: pedir diligencias a la Fiscalía, participar en las audiencias y solicitar la reparación del daño. Redactamos la querella y la seguimos hasta el término del juicio.",
+        ],
+      },
+    ],
+    steps: [
+      { title: "Contacto urgente", text: "Escríbenos por WhatsApp; para urgencias atendemos por Meet fuera de horario." },
+      { title: "Revisión", text: "Analizamos la carpeta investigativa y los antecedentes." },
+      { title: "Estrategia", text: "Definimos la defensa o la querella y las diligencias a pedir." },
+      { title: "Audiencias", text: "Te representamos ante el Juzgado de Garantía y el Tribunal Oral." },
+    ],
+    faqs: [
+      {
+        q: "¿Qué hago si me citan a declarar?",
+        a: "Busca asesoría antes de declarar. Tienes derecho a guardar silencio y a contar con un abogado desde la primera actuación.",
+      },
+      {
+        q: "¿Puedo cambiar al defensor público por uno privado?",
+        a: "Sí, puedes designar un abogado privado en cualquier etapa del proceso.",
+      },
+      {
+        q: "¿Qué es una querella?",
+        a: "Es el escrito con que la víctima se hace parte en el proceso penal, para impulsar la investigación y pedir sanción y reparación.",
+      },
+    ],
+    related: ["derecho-civil", "derecho-de-familia", "abogado-laboral"],
+    whatsappMessage: "Hola, necesito un abogado penal.",
+  },
+  {
+    slug: "asesoria-legal-empresas",
+    category: "Empresas",
+    name: "Asesoría legal para empresas",
+    metaTitle: "Asesoría Legal para Empresas y Pymes en Chile | Abogados Online",
+    metaDescription:
+      "Asesoría legal permanente para empresas y pymes: contratos, laboral, Ley Karin, cobranzas, sociedades y cumplimiento. Abogados online en todo Chile.",
+    h1: "Asesoría legal para empresas y pymes",
+    lead:
+      "Un equipo legal externo para tu empresa: contratos, temas laborales, Ley Karin, cobranzas y sociedades, con atención online y respuesta rápida por WhatsApp.",
+    keywords: [
+      "asesoria legal empresas",
+      "abogado para empresas",
+      "abogado pymes",
+      "asesoria juridica empresas",
+      "abogado corporativo",
+      "compliance empresas chile",
+    ],
+    highlights: [
+      "Contratos comerciales y laborales",
+      "Ley Karin y reglamento interno",
+      "Cobranza judicial y extrajudicial",
+      "Sociedades y modificaciones",
+    ],
+    sections: [
+      {
+        heading: "¿En qué ayudamos a tu empresa?",
+        bullets: [
+          "Redacción y revisión de contratos con clientes, proveedores y trabajadores.",
+          "Asesoría laboral para empleadores: contratos, despidos, finiquitos y fiscalizaciones.",
+          "Implementación de la Ley Karin y del reglamento interno.",
+          "Cobranza de facturas y deudas.",
+          "Constitución, modificación y regularización de sociedades.",
+          "Modelos de prevención de delitos para personas jurídicas (Ley 20.393, ampliada por la Ley de Delitos Económicos).",
+        ],
+      },
+      {
+        heading: "Asesoría permanente o por proyecto",
+        paragraphs: [
+          "Puedes contratarnos para un tema puntual o como asesoría mensual, con consultas incluidas. Te proponemos el formato según el tamaño y las necesidades de tu empresa.",
+        ],
+      },
+    ],
+    steps: [
+      { title: "Diagnóstico", text: "Revisamos contratos, reglamento y riesgos legales actuales." },
+      { title: "Propuesta", text: "Te enviamos alcance y valor, por proyecto o mensual." },
+      { title: "Ejecución", text: "Redactamos, corregimos e implementamos." },
+      { title: "Acompañamiento", text: "Quedamos disponibles para consultas del día a día." },
+    ],
+    faqs: [
+      {
+        q: "¿Atienden a pymes pequeñas?",
+        a: "Sí, trabajamos con pymes y emprendedores, con formatos ajustados a su tamaño.",
+      },
+      {
+        q: "¿Cómo se cobra la asesoría permanente?",
+        a: "Con un valor mensual que depende de las consultas y servicios incluidos. Te lo cotizamos tras el diagnóstico.",
+      },
+    ],
+    related: ["protocolo-ley-karin", "constitucion-de-sociedades", "asesoria-inversionistas"],
+    whatsappMessage: "Hola, quiero cotizar asesoría legal para mi empresa.",
+  },
+  {
+    slug: "asesoria-inversionistas",
+    category: "Empresas",
+    name: "Asesoría legal para inversionistas",
+    metaTitle: "Abogado para Inversionistas en Chile | Due Diligence y Pactos",
+    metaDescription:
+      "Asesoría legal para inversionistas en Chile: due diligence, pactos de accionistas, estructuras societarias, contratos de inversión e inversión inmobiliaria.",
+    h1: "Asesoría legal para inversionistas",
+    lead:
+      "Antes de invertir en una empresa, un proyecto o una propiedad en Chile, revisamos los riesgos legales y dejamos tus derechos por escrito.",
+    keywords: [
+      "abogado inversionistas",
+      "due diligence legal chile",
+      "pacto de accionistas",
+      "invertir en chile abogado",
+      "abogado inversion inmobiliaria",
+    ],
+    highlights: [
+      "Due diligence legal",
+      "Pactos de accionistas y de socios",
+      "Estructura societaria para invertir",
+      "Inversión inmobiliaria",
+    ],
+    sections: [
+      {
+        heading: "¿Qué revisamos antes de invertir?",
+        bullets: [
+          "Due diligence: sociedad, deudas, juicios, contratos, trabajadores y permisos.",
+          "Títulos de dominio y gravámenes cuando la inversión es inmobiliaria.",
+          "Riesgos laborales, tributarios y regulatorios a derivar con especialistas cuando corresponde.",
+        ],
+      },
+      {
+        heading: "Documentos que protegen tu inversión",
+        bullets: [
+          "Pacto de accionistas o de socios: gobierno, salida, arrastre y acompañamiento.",
+          "Contratos de inversión, préstamos convertibles y aumentos de capital.",
+          "Constitución de la sociedad vehículo (SpA u otra) para invertir.",
+        ],
+      },
+      {
+        heading: "Inversionistas extranjeros",
+        paragraphs: [
+          "Si inviertes desde el extranjero, te orientamos en la obtención de RUT, la designación de representante y la estructura más simple para operar en Chile, coordinando con asesores tributarios cuando se requiere.",
+        ],
+      },
+    ],
+    steps: [
+      { title: "Reunión", text: "Conocemos la oportunidad de inversión y tus objetivos." },
+      { title: "Due diligence", text: "Revisamos la información y te entregamos un informe de riesgos." },
+      { title: "Documentos", text: "Negociamos y redactamos los contratos." },
+      { title: "Cierre", text: "Acompañamos la firma, inscripciones y registros." },
+    ],
+    faqs: [
+      {
+        q: "¿Qué es un due diligence legal?",
+        a: "Es la revisión de la situación legal de una empresa o bien antes de invertir, para detectar deudas, juicios o contingencias que afecten el precio o la decisión.",
+      },
+      {
+        q: "¿Atienden a inversionistas fuera de Chile?",
+        a: "Sí, trabajamos por videollamada y documentos electrónicos con inversionistas de cualquier país.",
+      },
+    ],
+    related: ["constitucion-de-sociedades", "derecho-inmobiliario", "asesoria-legal-empresas"],
+    whatsappMessage: "Hola, necesito asesoría legal para una inversión.",
+  },
+  {
+    slug: "derecho-inmobiliario",
+    category: "Inmobiliario",
+    name: "Abogado inmobiliario",
+    metaTitle: "Abogado Inmobiliario en Chile | Estudio de Títulos y Compraventa",
+    metaDescription:
+      "Abogado inmobiliario: estudio de títulos, promesa y compraventa, inscripción en el Conservador de Bienes Raíces, arriendos blindados y asesoría a inmobiliarias.",
+    h1: "Abogado inmobiliario en Chile",
+    lead:
+      "Comprar, vender o arrendar una propiedad es una de las decisiones más grandes. Revisamos los títulos y redactamos los contratos para que la operación sea segura.",
+    keywords: [
+      "abogado inmobiliario",
+      "estudio de titulos",
+      "abogado compraventa propiedad",
+      "promesa de compraventa",
+      "inscripcion conservador de bienes raices",
+      "asesoria legal inmobiliaria",
+    ],
+    highlights: [
+      "Estudio de títulos",
+      "Promesa y compraventa",
+      "Inscripción en el Conservador",
+      "Asesoría a inmobiliarias y corredores",
+    ],
+    sections: [
+      {
+        heading: "Compraventa segura",
+        bullets: [
+          "Estudio de títulos de los últimos años y certificados de hipotecas, gravámenes y prohibiciones.",
+          "Redacción de la promesa de compraventa y de la escritura definitiva.",
+          "Coordinación con notaría, banco y Conservador de Bienes Raíces hasta la inscripción a tu nombre.",
+        ],
+      },
+      {
+        heading: "Arriendos y administración",
+        paragraphs: [
+          "Redactamos contratos de arriendo blindados y te representamos si el arrendatario deja de pagar. Ver también nuestra página de derecho civil sobre desalojos.",
+        ],
+      },
+      {
+        heading: "Inmobiliarias y corredores",
+        paragraphs: [
+          "Asesoramos a inmobiliarias, corredores y administradores en contratos tipo, promesas, reservas y regularización de propiedades.",
+        ],
+      },
+    ],
+    steps: [
+      { title: "Antecedentes", text: "Nos envías los datos de la propiedad y de las partes." },
+      { title: "Estudio de títulos", text: "Revisamos la historia legal de la propiedad." },
+      { title: "Contratos", text: "Redactamos promesa y compraventa." },
+      { title: "Inscripción", text: "Seguimos la inscripción en el Conservador." },
+    ],
+    faqs: [
+      {
+        q: "¿Para qué sirve un estudio de títulos?",
+        a: "Para confirmar que quien vende es el dueño, que la propiedad no tiene embargos, hipotecas o litigios ocultos, y que puede transferirse sin problemas.",
+      },
+      {
+        q: "¿El banco no hace el estudio de títulos?",
+        a: "Si compras con crédito hipotecario el banco hace su propio estudio para protegerse a sí mismo; uno independiente protege tus intereses como comprador.",
+      },
+    ],
+    related: ["derecho-civil", "asesoria-inversionistas", "constitucion-de-sociedades"],
+    whatsappMessage: "Hola, necesito un abogado inmobiliario.",
+  },
+  {
+    slug: "abogado-online-legaltech",
+    category: "Legaltech",
+    name: "Abogado online (legaltech)",
+    metaTitle: "Abogado Online en Chile | Estudio Legaltech con IA | AboVirtual",
+    metaDescription:
+      "Estudio legaltech: abogados online por WhatsApp y videollamada, agenda en línea, agentes jurídicos con IA y app Ley Karin. Atención en todo Chile.",
+    h1: "Abogado online: un estudio legaltech",
+    lead:
+      "AboVirtual combina abogados reales con tecnología: consulta por WhatsApp, agenda en línea, reuniones por videollamada y herramientas de inteligencia artificial para resolver más rápido.",
+    keywords: [
+      "abogado online",
+      "abogado online chile",
+      "abogado virtual",
+      "legaltech chile",
+      "consulta legal online",
+      "abogado por whatsapp",
+    ],
+    highlights: [
+      "Consulta por WhatsApp",
+      "Agenda en línea con Google Calendar",
+      "Reuniones por Google Meet",
+      "Agentes jurídicos con IA",
+    ],
+    sections: [
+      {
+        heading: "Cómo funciona el abogado online",
+        paragraphs: [
+          "Nos escribes por WhatsApp, agendas una hora en línea y nos reunimos por Google Meet. Revisamos tus documentos en formato digital y te mantenemos al tanto del avance de tu causa sin que tengas que ir a una oficina. Si prefieres, también te atendemos presencialmente en Providencia con hora agendada.",
+        ],
+      },
+      {
+        heading: "Tecnología al servicio de tu caso",
+        bullets: [
+          "Agentes jurídicos con IA para consultas rápidas, contratos y denuncias.",
+          "App Ley Karin para que las empresas gestionen su protocolo y canal de denuncias.",
+          "Precios publicados y pago en cuotas en los servicios de familia.",
+        ],
+      },
+      {
+        heading: "Siempre con un abogado responsable",
+        paragraphs: [
+          "La tecnología acelera el trabajo, pero cada caso lo revisa y firma un abogado habilitado. La IA no reemplaza la asesoría legal sobre tu situación concreta.",
+        ],
+      },
+    ],
+    steps: [
+      { title: "Escríbenos", text: "Por WhatsApp o desde el formulario de contacto." },
+      { title: "Agenda", text: "Elige tu hora en línea." },
+      { title: "Videollamada", text: "Revisamos tu caso por Google Meet." },
+      { title: "Seguimiento", text: "Te informamos cada avance por WhatsApp." },
+    ],
+    faqs: [
+      {
+        q: "¿Un abogado online es igual de válido?",
+        a: "Sí. Los escritos se presentan por la Oficina Judicial Virtual y muchas audiencias se realizan por videoconferencia; el abogado es el mismo, cambia solo la forma de atenderte.",
+      },
+      {
+        q: "¿Atienden en regiones?",
+        a: "Sí, atendemos online en todo Chile.",
+      },
+    ],
+    related: ["derecho-de-familia", "asesoria-legal-empresas", "protocolo-ley-karin", "proveedores-de-casos"],
+    whatsappMessage: "Hola, quiero una consulta legal online.",
+  },
+  {
+    slug: "proveedores-de-casos",
+    category: "Legaltech",
+    name: "Derivación de casos para abogados",
+    metaTitle: "Casos para Abogados en Chile | Derivación de Clientes | AboVirtual",
+    metaDescription:
+      "¿Eres abogado o estudio jurídico? AboVirtual capta y deriva casos calificados en familia, laboral, civil y más, con marketing legal y tecnología. Únete a la red.",
+    h1: "Derivación de casos para abogados y estudios jurídicos",
+    lead:
+      "Captamos y calificamos casos a través de nuestros canales digitales y los derivamos a abogados y estudios colaboradores según su especialidad y zona.",
+    keywords: [
+      "casos para abogados",
+      "clientes para abogados",
+      "derivacion de casos abogados",
+      "red de abogados chile",
+      "marketing para abogados",
+    ],
+    highlights: [
+      "Casos calificados por especialidad",
+      "Familia, laboral, civil, penal y empresas",
+      "Captación con marketing digital y IA",
+      "Red de abogados colaboradores",
+    ],
+    sections: [
+      {
+        heading: "¿Cómo funciona?",
+        paragraphs: [
+          "Las personas llegan a AboVirtual por Google, redes sociales y WhatsApp. Un primer filtro identifica la materia, la urgencia y la región, y derivamos el caso a un abogado de la red que pueda tomarlo. El cliente siempre sabe a quién se deriva y el abogado decide si acepta el caso.",
+        ],
+      },
+      {
+        heading: "Para abogados y estudios",
+        bullets: [
+          "Recibe casos de tu especialidad y zona.",
+          "Herramientas de marketing legal: contenido, anuncios y agentes de IA.",
+          "Condiciones de colaboración por escrito y conforme a las normas de ética profesional.",
+        ],
+      },
+    ],
+    steps: [
+      { title: "Postula", text: "Cuéntanos tu especialidad, región y capacidad." },
+      { title: "Acuerdo", text: "Definimos por escrito cómo trabajaremos." },
+      { title: "Derivación", text: "Te enviamos casos calificados." },
+      { title: "Seguimiento", text: "Medimos la atención y la satisfacción del cliente." },
+    ],
+    faqs: [
+      {
+        q: "¿Qué tipo de casos derivan?",
+        a: "Principalmente familia, laboral, civil, penal y asesoría a empresas, según la demanda en cada región.",
+      },
+      {
+        q: "¿Cómo me uno a la red?",
+        a: "Escríbenos por WhatsApp indicando tu especialidad y región, y te enviamos la información.",
+      },
+    ],
+    related: ["abogado-online-legaltech", "asesoria-legal-empresas"],
+    whatsappMessage: "Hola, soy abogado/a y quiero recibir casos de AboVirtual.",
   },
 ]
 
