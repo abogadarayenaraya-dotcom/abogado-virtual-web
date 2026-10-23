@@ -18,8 +18,9 @@ import {
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "Marketing Pro | AboVirtual",
+  title: "Marketing Pro",
   description: "Planes de marketing digital para estudios jurídicos. Avatares, agentes IA, creadores de contenido y videos. Desde $550.990.",
+  alternates: { canonical: "/marketing" },
 }
 
 const plans = [

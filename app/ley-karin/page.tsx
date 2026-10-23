@@ -21,8 +21,9 @@ import {
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "App Ley Karin para Empresas | AboVirtual",
+  title: "App Ley Karin para Empresas",
   description: "Cumple con la Ley Karin en tu empresa. Software adaptado, IA aplicada, contenido y cumplimiento normativo. Suscripciones desde $650.990.",
+  alternates: { canonical: "/ley-karin" },
 }
 
 const features = [

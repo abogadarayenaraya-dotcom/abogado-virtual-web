@@ -18,8 +18,9 @@ import {
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "Portafolio | AboVirtual",
+  title: "Portafolio",
   description: "Conoce nuestros casos de éxito, proyectos y campañas. AboVirtual - Abogados Siempre Conectados.",
+  alternates: { canonical: "/portafolio" },
 }
 
 const categories = [

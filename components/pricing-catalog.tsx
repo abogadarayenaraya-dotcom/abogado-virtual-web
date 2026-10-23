@@ -1,6 +1,7 @@
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Users, Building2, Briefcase, Home, CheckCircle, CalendarDays, Sparkles } from "lucide-react"
+import Link from "next/link"
 import { BOOKING_URL } from "@/lib/contact"
 
 type Offer = {
@@ -10,6 +11,7 @@ type Offer = {
   payment?: string
   features?: string[]
   featured?: boolean
+  href?: string
 }
 
 const areas: { icon: typeof Users; emoji: string; area: string; offers: Offer[] }[] = [
@@ -18,9 +20,9 @@ const areas: { icon: typeof Users; emoji: string; area: string; offers: Offer[] 
     emoji: "👨‍👩‍👧",
     area: "Área Familia",
     offers: [
-      { name: "Divorcio Mutuo Acuerdo", price: "$99.990", payment: "Pago único" },
-      { name: "Divorcio Unilateral / Visitas", price: "$199.990", payment: "Pago en 2 cuotas", featured: true },
-      { name: "Pensión de Alimentos", price: "$359.990", payment: "Pago en 3 cuotas" },
+      { name: "Divorcio Mutuo Acuerdo", price: "$99.990", payment: "Pago único", href: "/servicios/divorcio-mutuo-acuerdo" },
+      { name: "Divorcio Unilateral / Visitas", price: "$199.990", payment: "Pago en 2 cuotas", featured: true, href: "/servicios/divorcio-unilateral" },
+      { name: "Pensión de Alimentos", price: "$359.990", payment: "Pago en 3 cuotas", href: "/servicios/pension-de-alimentos" },
     ],
   },
   {
@@ -33,6 +35,7 @@ const areas: { icon: typeof Users; emoji: string; area: string; offers: Offer[] 
         priceNote: "Desde",
         price: "$99.990",
         features: ["Implementación de protocolos"],
+        href: "/servicios/protocolo-ley-karin",
       },
       {
         name: "Sociedades",
@@ -40,6 +43,7 @@ const areas: { icon: typeof Users; emoji: string; area: string; offers: Offer[] 
         price: "$250.000",
         payment: "50% al inicio / 50% al finalizar",
         features: ["Constitución de sociedades"],
+        href: "/servicios/constitucion-de-sociedades",
       },
     ],
   },
@@ -48,8 +52,8 @@ const areas: { icon: typeof Users; emoji: string; area: string; offers: Offer[] 
     emoji: "💼",
     area: "Área Laboral",
     offers: [
-      { name: "Revisión de Finiquito", price: "GRATIS", featured: true },
-      { name: "Defensa Laboral", features: ["Defensa por despido injustificado"] },
+      { name: "Revisión de Finiquito", price: "GRATIS", featured: true, href: "/servicios/abogado-laboral" },
+      { name: "Defensa Laboral", features: ["Defensa por despido injustificado"], href: "/servicios/abogado-laboral" },
     ],
   },
   {
@@ -57,8 +61,8 @@ const areas: { icon: typeof Users; emoji: string; area: string; offers: Offer[] 
     emoji: "🏠",
     area: "Área Civil",
     offers: [
-      { name: "Posesión Efectiva", features: ["Posesión Efectiva exprés"] },
-      { name: "Arriendos y Desalojos", features: ["Arriendos blindados", "Desalojos"] },
+      { name: "Posesión Efectiva", features: ["Posesión Efectiva exprés"], href: "/servicios/derecho-civil" },
+      { name: "Arriendos y Desalojos", features: ["Arriendos blindados", "Desalojos"], href: "/servicios/derecho-civil" },
     ],
   },
 ]
@@ -102,6 +106,14 @@ function OfferCard({ offer }: { offer: Offer }) {
           Agendar Ahora
         </a>
       </Button>
+      {offer.href && (
+        <Link
+          href={offer.href}
+          className="mt-3 text-center text-sm font-medium text-primary hover:underline"
+        >
+          Ver detalles y requisitos
+        </Link>
+      )}
     </div>
   )
 }

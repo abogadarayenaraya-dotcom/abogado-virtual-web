@@ -24,8 +24,9 @@ import {
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "Blog y Recursos | AboVirtual",
+  title: "Blog y Recursos",
   description: "Artículos legales, guías sobre IA jurídica, videos educativos y recursos para entender tus derechos. AboVirtual - Abogados Siempre Conectados.",
+  alternates: { canonical: "/blog" },
 }
 
 const categories = [

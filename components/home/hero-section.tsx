@@ -10,8 +10,8 @@ import { Calendar, MessageCircle, Scale, Shield, Zap, ChevronLeft, ChevronRight,
 
 const carouselSlides = [
   {
-    title: "Abogados Siempre Conectados",
-    subtitle: "Servicios legales virtuales en Chile con atención personalizada",
+    title: "Abogados de Familia Siempre Conectados",
+    subtitle: "Divorcios, pensión de alimentos y visitas, online en todo Chile",
     icon: Scale,
     image: "/images/logo.jpg",
     badge: "AboVirtual",
@@ -103,9 +103,13 @@ export function HeroSection() {
                     AboVirtual
                   </span>
                 </div>
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-foreground leading-tight text-balance">
-                  {carouselSlides[currentSlide].title}
+                {/* El título del carrusel cambia; el H1 fijo describe la página para Google */}
+                <h1 className="sr-only">
+                  Abogado de familia online en Chile: divorcio de mutuo acuerdo, divorcio unilateral, pensión de alimentos y visitas
                 </h1>
+                <p className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-foreground leading-tight text-balance">
+                  {carouselSlides[currentSlide].title}
+                </p>
                 <p className="text-xl md:text-2xl text-muted-foreground mt-4">
                   {carouselSlides[currentSlide].subtitle}
                 </p>
